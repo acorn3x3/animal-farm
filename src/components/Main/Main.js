@@ -7,11 +7,17 @@ import Animal from '../Animal/Animal.js';
 import background from '../../background.png';
 //set background here
 
-export default function Main() {
+export default function Main(props) {
   return (
     <main style={{ backgroundImage: `url(${background})` }}>
-      {animals.map((item) => (
-        <Animal key={item.name} {...item} />
+      {animals.map((animal) => (
+        <Animal
+          key={animal.name}
+          name={animal.name}
+          type={animal.type}
+          top={animal.top}
+          left={animal.left}
+        />
       ))}
     </main>
   );
